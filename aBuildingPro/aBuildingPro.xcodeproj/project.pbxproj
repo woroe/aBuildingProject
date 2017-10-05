@@ -25,6 +25,11 @@
 		51EE08D01F8615A800B35275 /* pubMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08CD1F8615A800B35275 /* pubMethod.m */; settings = {ASSET_TAGS = (); }; };
 		51EE08D51F86172000B35275 /* mapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08D41F86172000B35275 /* mapController.m */; settings = {ASSET_TAGS = (); }; };
 		51EE08D81F86173800B35275 /* tagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08D71F86173800B35275 /* tagController.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08EE1F866C2000B35275 /* mapBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08E91F866C2000B35275 /* mapBubble.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08EF1F866C2000B35275 /* mapBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08EB1F866C2000B35275 /* mapBubbleView.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08F01F866C2000B35275 /* mapRedBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08ED1F866C2000B35275 /* mapRedBag.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08F21F866C3B00B35275 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51EE08F11F866C3B00B35275 /* logo@3x.png */; settings = {ASSET_TAGS = (); }; };
+		51EE08F41F866C4500B35275 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51EE08F31F866C4500B35275 /* logo@3x.png */; settings = {ASSET_TAGS = (); }; };
 		91E788807060039B2EA59475 /* libPods-aBuildingProUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4BC6D666CBD142F28100E9 /* libPods-aBuildingProUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +81,14 @@
 		51EE08D41F86172000B35275 /* mapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapController.m; sourceTree = "<group>"; };
 		51EE08D61F86173800B35275 /* tagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tagController.h; sourceTree = "<group>"; };
 		51EE08D71F86173800B35275 /* tagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tagController.m; sourceTree = "<group>"; };
+		51EE08E81F866C2000B35275 /* mapBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapBubble.h; sourceTree = "<group>"; };
+		51EE08E91F866C2000B35275 /* mapBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapBubble.m; sourceTree = "<group>"; };
+		51EE08EA1F866C2000B35275 /* mapBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapBubbleView.h; sourceTree = "<group>"; };
+		51EE08EB1F866C2000B35275 /* mapBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapBubbleView.m; sourceTree = "<group>"; };
+		51EE08EC1F866C2000B35275 /* mapRedBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapRedBag.h; sourceTree = "<group>"; };
+		51EE08ED1F866C2000B35275 /* mapRedBag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapRedBag.m; sourceTree = "<group>"; };
+		51EE08F11F866C3B00B35275 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
+		51EE08F31F866C4500B35275 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		59791360DE923ACB59FA5683 /* Pods-aBuildingProTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aBuildingProTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aBuildingProTests/Pods-aBuildingProTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64EA86D991626459EC54A3A0 /* Pods-aBuildingProUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aBuildingProUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aBuildingProUITests/Pods-aBuildingProUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9B16E9843F3B58A0D4549818 /* libPods-aBuildingPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aBuildingPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +187,7 @@
 		51EE08911F85FBEC00B35275 /* code */ = {
 			isa = PBXGroup;
 			children = (
+				51EE08E71F866C2000B35275 /* view */,
 				51EE08D11F86170100B35275 /* mapModule */,
 				51EE08D21F86170100B35275 /* tagModule */,
 				51EE08A31F85FD9C00B35275 /* IndexController.h */,
@@ -220,6 +234,7 @@
 		51EE08B01F86089C00B35275 /* mapImg */ = {
 			isa = PBXGroup;
 			children = (
+				51EE08F11F866C3B00B35275 /* logo@3x.png */,
 			);
 			path = mapImg;
 			sourceTree = "<group>";
@@ -227,6 +242,7 @@
 		51EE08B11F86089C00B35275 /* tagImg */ = {
 			isa = PBXGroup;
 			children = (
+				51EE08F31F866C4500B35275 /* logo@3x.png */,
 			);
 			path = tagImg;
 			sourceTree = "<group>";
@@ -247,6 +263,20 @@
 				51EE08D71F86173800B35275 /* tagController.m */,
 			);
 			path = tagModule;
+			sourceTree = "<group>";
+		};
+		51EE08E71F866C2000B35275 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				51EE08E81F866C2000B35275 /* mapBubble.h */,
+				51EE08E91F866C2000B35275 /* mapBubble.m */,
+				51EE08EA1F866C2000B35275 /* mapBubbleView.h */,
+				51EE08EB1F866C2000B35275 /* mapBubbleView.m */,
+				51EE08EC1F866C2000B35275 /* mapRedBag.h */,
+				51EE08ED1F866C2000B35275 /* mapRedBag.m */,
+			);
+			name = view;
+			path = mapModule/view;
 			sourceTree = "<group>";
 		};
 		BD5C50A8D561E494BEA05DB1 /* Pods */ = {
@@ -387,6 +417,8 @@
 			files = (
 				51EE08C01F86111000B35275 /* myLanguage.strings in Resources */,
 				51EE089B1F85FBEC00B35275 /* Assets.xcassets in Resources */,
+				51EE08F21F866C3B00B35275 /* logo@3x.png in Resources */,
+				51EE08F41F866C4500B35275 /* logo@3x.png in Resources */,
 				51EE089E1F85FBEC00B35275 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,11 +584,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EE08EE1F866C2000B35275 /* mapBubble.m in Sources */,
 				51EE08A51F85FD9C00B35275 /* IndexController.m in Sources */,
 				51EE08A91F85FE4000B35275 /* appComeIn.m in Sources */,
 				51EE08D51F86172000B35275 /* mapController.m in Sources */,
 				51EE089F1F85FBEC00B35275 /* main.m in Sources */,
+				51EE08EF1F866C2000B35275 /* mapBubbleView.m in Sources */,
 				51EE08D81F86173800B35275 /* tagController.m in Sources */,
+				51EE08F01F866C2000B35275 /* mapRedBag.m in Sources */,
 				51EE08AC1F85FEAB00B35275 /* parentController.m in Sources */,
 				51EE08CE1F8615A800B35275 /* pubMethod.m in Sources */,
 			);
