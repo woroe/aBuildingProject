@@ -1,0 +1,7 @@
+bin/
+obj/
+Pods/
+xcuserdata/
+.xcuserdatad
+.xcworkspace
+*.dll

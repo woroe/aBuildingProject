@@ -1,0 +1,21 @@
+
+
+platform :ios, '7.0'
+project 'aBuildingPro'
+
+def common_pods
+
+		pod 'Masonry'
+		pod 'AFNetworking'
+    pod 'SDWebImage'
+    pod 'MBProgressHUD'
+ 
+end
+
+target 'aBuildingProTests' do
+    common_pods
+end
+
+target 'aBuildingProUITests' do
+    common_pods
+end
