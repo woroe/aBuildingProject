@@ -9,7 +9,14 @@ def common_pods
 		pod 'AFNetworking'
     pod 'SDWebImage'
     pod 'MBProgressHUD'
- 
+    
+    #pod 'AMap3DMap'			#德高3D地图SDK
+    #pod 'AMapSearch'			#地图SDK 搜索功能
+    #pod 'AMapLocation'   #地图SDK 定位功能
+    pod 'AMap3DMap-NO-IDFA'			#程序中没有广告，使用 无IDFA的基础SDK
+    pod 'AMapSearch-NO-IDFA'
+    pod 'AMapLocation-NO-IDFA'
+
 end
 
 target 'aBuildingPro' do

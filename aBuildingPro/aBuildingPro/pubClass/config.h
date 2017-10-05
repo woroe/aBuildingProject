@@ -9,6 +9,7 @@
 #define PATH_DOCUMENT           [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
 #define SCREEN_WIDTH            [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT           [[UIScreen mainScreen] bounds].size.height    //屏幕高度
+#define WS(weakSelf)  			__weak __typeof(&*self)weakSelf = self;
 
 #define DBName                  @"LHApple.db"
 #define RGBCOLOR(r,g,b)         [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]

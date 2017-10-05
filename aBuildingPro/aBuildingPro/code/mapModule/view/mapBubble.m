@@ -1,10 +1,10 @@
 //
-//  mapController.h
+//  mapBubble.m
 //  Created by hong Li on 2017/10/5.
 //  Copyright © 2017年 hong LiaBuilding. All rights reserved.
 //
-#import "parentController.h"
+#import "mapBubble.h"
 
-@interface mapController : parentController
+@implementation mapBubble
 
 @end
