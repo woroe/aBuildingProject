@@ -9,15 +9,11 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import "mapRedBag.h"
-//#import "mapBubble.h"
-//#import "mapBubbleView.h"
 
+//http://lbs.amap.com/api/ios-sdk/ 高德地图官网
 @interface mapController ()<MAMapViewDelegate,AMapSearchDelegate>
 @end
 @implementation mapController{
-//    MKMapView                          *_map;
-//    CLLocationManager              *_manager;
-//    UISegmentedControl             *_segment;
     AMapSearchAPI			*search;
     MAMapView 				*_mapView;
     NSMutableArray			*redArr;
@@ -50,12 +46,12 @@
     
     [self initAnnotations];
 }
-#pragma mark - Initialization
+#pragma mark - 初始化 气泡 坐标
 - (void)initAnnotations{
     redArr = [NSMutableArray array];
     
     CLLocationCoordinate2D coordinates[10] = {
-        {39.992520, 116.336170},
+        {39.992520, 116.336130},
         {39.992520, 116.336170},
         {39.998293, 116.352343},
         {40.004087, 116.348904},
@@ -74,23 +70,13 @@
         [redArr addObject:a1];
     }
 }
-#pragma mark - 设置大头针坐标
-//- (void)initAnnotations{
-//    NSMutableArray *coordinates = [NSMutableArray array];
-//    for (mapRedBag *model in redArr){
-//        MAPointAnnotation *a1 = [[MAPointAnnotation alloc] init];
-//        a1.coordinate = CLLocationCoordinate2DMake(model.coordinateLat,model.coordinateLng);
-//        [coordinates addObject:a1];
-//    }
-//    [_mapView addAnnotations:coordinates];
-//}
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [_mapView addAnnotations:redArr];
-    [_mapView showAnnotations:redArr edgePadding:UIEdgeInsetsMake(20, 20, 20, 80) animated:YES];
-}
+#pragma mark - 返回 自定义气泡
+/**
+ * @brief 根据anntation生成对应的View 自定义气泡
+ * @param mapView 地图View
+ * @param annotation 指定的标注
+ * @return 生成的标注View
+ */
 - (MAAnnotationView*)mapView:(MAMapView *)mapView viewForAnnotation:(id <MAAnnotation>)annotation {
     if ([annotation isKindOfClass:[MAPointAnnotation class]]){
         static NSString *pointReuseIndetifier = @"pointReuseIndetifier";
@@ -130,100 +116,6 @@
 - (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error{
     NSLog(@"Error: %@", error);
 }
-//#pragma mark - 添加地图的模式
-//-(void)addMapViewModel{
-//    NSArray *array = @[@"标准",@"卫星",@"混合",@"地图卫星立交桥",@"混合立交桥"];
-//    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:array];
-//    segment.frame = CGRectMake(10, 100, 300, 20);
-//    segment.selectedSegmentIndex = 0;
-//    [segment addTarget:self action:@selector(clickMapViewModel:) forControlEvents:UIControlEventValueChanged];
-//    [self.view addSubview:segment];
-//    _segment = segment;
-//}
-//#pragma mark - 添加地图
-//-(void)addMapView{
-//    MKMapView *map = [[MKMapView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64)];
-//    [self.view addSubview:map];
-//    _map = map;
-//    
-//    
-//    // 在地图上显示定位
-//    // 1、请求授权(在Info.plist中添加NSLocationWhenInUseUsageDescription）
-//    _manager = [[CLLocationManager alloc] init];
-//    [_manager requestWhenInUseAuthorization];
-//    
-//    // 2.设置地图的用户跟踪模式
-//    map.userTrackingMode = MKUserTrackingModeFollow;
-//    map.delegate = self;
-//    
-//    // 其他的新属性
-//    // 显示指南针
-//    _map.showsCompass = YES;
-//    // 显示感兴趣的点，默认是显示的
-//    _map.showsPointsOfInterest = YES;
-//    // 显示标尺(单位：mi 英尺)
-//    _map.showsScale = YES;
-//    // 显示交通情况
-//    _map.showsTraffic = YES;
-//    // 显示定位大头针，默认是显示的
-//    _map.showsUserLocation = YES;
-//    // 显示建筑物的3D模型，设置3D/沙盘/航拍模式(高德地图不支持)
-//    _map.showsBuildings = YES;
-//    
-//    
-//}
-//#pragma mark - MKMapViewDelegate
-//-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-//    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-//    [geocoder reverseGeocodeLocation:userLocation.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-//        if (placemarks.count == 0 || error) {
-//            return ;
-//        }
-//        CLPlacemark *pm = placemarks.lastObject;
-//        _map.userLocation.title = [NSString stringWithFormat:@"%@-%@-%@",pm.administrativeArea,pm.locality,pm.subLocality];
-//        _map.userLocation.subtitle = pm.name;
-//        
-//    }];
-//}
-//#pragma mark - 添加大头针
-//// 大头针视图是有系统来添加的，但是大头针的数据是需要由开发者通过大头针模型来设置的
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    mapBubble *annotation = [[mapBubble alloc] init];
-//    UITouch *touch = touches.anyObject;
-//    CGPoint point = [touch locationInView:_map];
-//    CLLocationCoordinate2D coor = [_map convertPoint:point toCoordinateFromView:_map];
-//    annotation.coordinate = coor;
-//    annotation.title = @"xiao66guo";
-//    annotation.subtitle = @"😋呵呵呵呵呵";
-//    [_map addAnnotation:annotation];
-//    [self.view endEditing:YES];
-//}
-//
-//#pragma mark - 大头针的重用
-//-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-//    // 排除已经定位的大头针
-//    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-//        return nil;
-//    }
-//    mapBubbleView *anV = [mapBubbleView xg_annotationWithMapView:_map];
-//    
-//    return anV;
-//}
-//#pragma mark - 当已经添加大头针视图后调用(还没有显示在地图上)该方法可以用来设置自定义动画
-//-(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views{
-//    for (MKAnnotationView *anv in views) {
-//        // 排除定位的大头针
-//        if ([anv.annotation isKindOfClass:[MKUserLocation class]]) {
-//            return;
-//        }
-//        CGRect targetRect = anv.frame;
-//        // 修改位置
-//        anv.frame = CGRectMake(targetRect.origin.x, 0, targetRect.size.width, targetRect.size.height);
-//        [UIView animateWithDuration:0.3 animations:^{
-//            anv.frame = targetRect;
-//        }];
-//    }
-//}
 
 
 #pragma mark - 视图即将显示 - 消失、被覆盖或是隐藏 - 内存报警
@@ -232,6 +124,11 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [_mapView addAnnotations:redArr];
+    [_mapView showAnnotations:redArr edgePadding:UIEdgeInsetsMake(20, 20, 20, 80) animated:YES];
 }
 - (void)didReceiveMemoryWarning {[super didReceiveMemoryWarning];}
 @end

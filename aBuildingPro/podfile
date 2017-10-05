@@ -22,11 +22,3 @@ end
 target 'aBuildingPro' do
     common_pods
 end
-
-target 'aBuildingProTests' do
-    common_pods
-end
-
-target 'aBuildingProUITests' do
-    common_pods
-end
