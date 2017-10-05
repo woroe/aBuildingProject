@@ -45,13 +45,28 @@
 	[search AMapWeatherSearch:request];
     
     [self initAnnotations];
+    
+    //计算这两个点间的直线距离，单位为米
+    //1.将两个经纬度点转成投影点
+    MAMapPoint point1 = MAMapPointForCoordinate(CLLocationCoordinate2DMake(39.989612,116.480972));
+    MAMapPoint point2 = MAMapPointForCoordinate(CLLocationCoordinate2DMake(39.990347,116.480441));
+    //2.计算距离
+    CLLocationDistance distance = MAMetersBetweenMapPoints(point1,point2);
+    NSLog(@"计算距离=%f",distance);
+    
+    
+    //判断点是否在圆形内 5000.0米以内
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(39.989612,116.480972);
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(39.990347,116.480441);
+    BOOL isContains = MACircleContainsCoordinate(location, center,5000.0);
+    NSLog(@"判断点是否在圆形内=%i",isContains);
 }
 #pragma mark - 初始化 气泡 坐标
 - (void)initAnnotations{
     redArr = [NSMutableArray array];
     
     CLLocationCoordinate2D coordinates[10] = {
-        {39.992520, 116.336130},
+        {39.992520, 116.346130},
         {39.992520, 116.336170},
         {39.998293, 116.352343},
         {40.004087, 116.348904},
@@ -81,16 +96,18 @@
     if ([annotation isKindOfClass:[MAPointAnnotation class]]){
         static NSString *pointReuseIndetifier = @"pointReuseIndetifier";
         MAPinAnnotationView *annotationView = (MAPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
-        if (annotationView == nil)
-        {
+        if (annotationView == nil){
             annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndetifier];
         }
-        
-        annotationView.canShowCallout               = YES;
+        //是否显示SDK的指针气泡
+        annotationView.canShowCallout               = NO;
         annotationView.animatesDrop                 = YES;
         annotationView.draggable                    = YES;
+        annotationView.image=[UIImage imageNamed:@"mapImg"];
+        //显示在气泡左侧的view
+        annotationView.leftCalloutAccessoryView     = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        //显示在气泡右侧的view
         annotationView.rightCalloutAccessoryView    = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        annotationView.pinColor                     = [redArr indexOfObject:annotation] % 3;
         
         return annotationView;
     }
@@ -111,6 +128,7 @@
     //通过 response.forecasts 获取城市对应预报天气数据信息，预报天气详细信息参考 AMapLocalWeatherForecast 类。
     //可查询未来3天的预报天气，通过 AMapLocalWeatherForecast.casts 获取预报天气列表
     //解析response获取天气信息
+    NSLog(@"response: %@", response);
 }
 //当查询失败时，会进入 didFailWithError 回调函数，通过该回调函数获取产生的失败的原因。
 - (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error{
