@@ -5,6 +5,12 @@
 //
 #import <UIKit/UIKit.h>
 
-@interface parentController : UIViewController
+@interface parentController : UIViewController{
+    
+    CGFloat 		selfWid;
+    CGFloat			selfHig;
+    UIView			*contentView;
+    
+}
 
 @end

@@ -20,6 +20,11 @@
 		51EE08C01F86111000B35275 /* myLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51EE08C41F86111000B35275 /* myLanguage.strings */; };
 		51EE08C11F86111000B35275 /* myLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51EE08C41F86111000B35275 /* myLanguage.strings */; };
 		51EE08C21F86111000B35275 /* myLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51EE08C41F86111000B35275 /* myLanguage.strings */; };
+		51EE08CE1F8615A800B35275 /* pubMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08CD1F8615A800B35275 /* pubMethod.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08CF1F8615A800B35275 /* pubMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08CD1F8615A800B35275 /* pubMethod.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08D01F8615A800B35275 /* pubMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08CD1F8615A800B35275 /* pubMethod.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08D51F86172000B35275 /* mapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08D41F86172000B35275 /* mapController.m */; settings = {ASSET_TAGS = (); }; };
+		51EE08D81F86173800B35275 /* tagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EE08D71F86173800B35275 /* tagController.m */; settings = {ASSET_TAGS = (); }; };
 		91E788807060039B2EA59475 /* libPods-aBuildingProUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4BC6D666CBD142F28100E9 /* libPods-aBuildingProUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +70,12 @@
 		51EE08C51F86111200B35275 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/myLanguage.strings; sourceTree = "<group>"; };
 		51EE08C61F86128700B35275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/myLanguage.strings; sourceTree = "<group>"; };
 		51EE08CB1F86130900B35275 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		51EE08CC1F8615A800B35275 /* pubMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pubMethod.h; sourceTree = "<group>"; };
+		51EE08CD1F8615A800B35275 /* pubMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pubMethod.m; sourceTree = "<group>"; };
+		51EE08D31F86172000B35275 /* mapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapController.h; sourceTree = "<group>"; };
+		51EE08D41F86172000B35275 /* mapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapController.m; sourceTree = "<group>"; };
+		51EE08D61F86173800B35275 /* tagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tagController.h; sourceTree = "<group>"; };
+		51EE08D71F86173800B35275 /* tagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tagController.m; sourceTree = "<group>"; };
 		59791360DE923ACB59FA5683 /* Pods-aBuildingProTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aBuildingProTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aBuildingProTests/Pods-aBuildingProTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64EA86D991626459EC54A3A0 /* Pods-aBuildingProUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aBuildingProUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aBuildingProUITests/Pods-aBuildingProUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9B16E9843F3B58A0D4549818 /* libPods-aBuildingPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aBuildingPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +174,8 @@
 		51EE08911F85FBEC00B35275 /* code */ = {
 			isa = PBXGroup;
 			children = (
+				51EE08D11F86170100B35275 /* mapModule */,
+				51EE08D21F86170100B35275 /* tagModule */,
 				51EE08A31F85FD9C00B35275 /* IndexController.h */,
 				51EE08A41F85FD9C00B35275 /* IndexController.m */,
 			);
@@ -188,6 +201,8 @@
 				51EE08AA1F85FEAB00B35275 /* parentController.h */,
 				51EE08AB1F85FEAB00B35275 /* parentController.m */,
 				51EE08CB1F86130900B35275 /* config.h */,
+				51EE08CC1F8615A800B35275 /* pubMethod.h */,
+				51EE08CD1F8615A800B35275 /* pubMethod.m */,
 			);
 			path = pubClass;
 			sourceTree = "<group>";
@@ -214,6 +229,24 @@
 			children = (
 			);
 			path = tagImg;
+			sourceTree = "<group>";
+		};
+		51EE08D11F86170100B35275 /* mapModule */ = {
+			isa = PBXGroup;
+			children = (
+				51EE08D31F86172000B35275 /* mapController.h */,
+				51EE08D41F86172000B35275 /* mapController.m */,
+			);
+			path = mapModule;
+			sourceTree = "<group>";
+		};
+		51EE08D21F86170100B35275 /* tagModule */ = {
+			isa = PBXGroup;
+			children = (
+				51EE08D61F86173800B35275 /* tagController.h */,
+				51EE08D71F86173800B35275 /* tagController.m */,
+			);
+			path = tagModule;
 			sourceTree = "<group>";
 		};
 		BD5C50A8D561E494BEA05DB1 /* Pods */ = {
@@ -521,8 +554,11 @@
 			files = (
 				51EE08A51F85FD9C00B35275 /* IndexController.m in Sources */,
 				51EE08A91F85FE4000B35275 /* appComeIn.m in Sources */,
+				51EE08D51F86172000B35275 /* mapController.m in Sources */,
 				51EE089F1F85FBEC00B35275 /* main.m in Sources */,
+				51EE08D81F86173800B35275 /* tagController.m in Sources */,
 				51EE08AC1F85FEAB00B35275 /* parentController.m in Sources */,
+				51EE08CE1F8615A800B35275 /* pubMethod.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EE08CF1F8615A800B35275 /* pubMethod.m in Sources */,
 				51EE08791F85FB6C00B35275 /* aBuildingProTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EE08D01F8615A800B35275 /* pubMethod.m in Sources */,
 				51EE08841F85FB6C00B35275 /* aBuildingProUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

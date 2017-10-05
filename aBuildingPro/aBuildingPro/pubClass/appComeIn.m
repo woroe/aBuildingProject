@@ -18,7 +18,7 @@
     myWindow= [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     IndexController *MV= [[IndexController alloc]init];
     UINavigationController  *MainNav= [[UINavigationController alloc]initWithRootViewController:MV];
-    MainNav.navigationBarHidden=YES;
+    //MainNav.navigationBarHidden=YES;
     myWindow.rootViewController=MainNav;
     [myWindow makeKeyAndVisible];
     return YES;
