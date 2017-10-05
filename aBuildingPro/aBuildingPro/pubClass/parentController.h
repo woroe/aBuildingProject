@@ -5,8 +5,6 @@
 //
 #import <UIKit/UIKit.h>
 
-
-
 @interface parentController : UIViewController
 
 @end

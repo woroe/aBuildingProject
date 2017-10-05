@@ -12,6 +12,10 @@ def common_pods
  
 end
 
+target 'aBuildingPro' do
+    common_pods
+end
+
 target 'aBuildingProTests' do
     common_pods
 end

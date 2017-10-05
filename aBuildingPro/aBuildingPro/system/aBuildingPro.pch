@@ -1,0 +1,20 @@
+//
+//  aBuildingPro.pch
+//  Created by hong Li on 2017/10/5.
+//  Copyright © 2017年 hong LiaBuilding. All rights reserved.
+//
+
+#ifndef aBuildingPro_pch
+#define aBuildingPro_pch
+
+//包含所有编译单元中包含的任何系统框架和库头。
+//还需要设置一个或多个目标的前缀头构建设置来引用此文件。
+#import "config.h"
+#import <Masonry/Masonry.h>
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+
+
+#endif /* aBuildingPro_pch */

@@ -11,6 +11,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UILabel *lbtest=[UILabel new];
+    lbtest.font=[UIFont systemFontOfSize:14.0];
+    lbtest.textColor=[UIColor blackColor];
+    [self.view addSubview:lbtest];
+    [lbtest mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.leading.mas_equalTo(50.0);
+    }];
+    
+    lbtest.text=BuildString(@"test");
 }
 
 - (void)didReceiveMemoryWarning {
